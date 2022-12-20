@@ -8,6 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "dependencies": {
     "expo": "~47.0.8",
     "expo-status-bar": "~1.4.2",
@@ -24,6 +27,8 @@
     "@typescript-eslint/parser": "^5.47.0",
     "eslint": "^8.30.0",
     "eslint-config-react-app": "^7.0.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "prettier": "2.8.1",
     "typescript": "^4.6.3"
   },
