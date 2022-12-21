@@ -1,10 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Text>Open up App.tsx to start working on your app!</Text>
+			<View>
+				<Text>Title</Text>
+			</View>
+			<View>
+				<FlatList data={[]} renderItem={() => <Button title={"Text"} />} />
+			</View>
 		</View>
 	);
 }
