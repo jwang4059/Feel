@@ -1,572 +1,182 @@
-const emotions = [
-	{
-		val: "happy",
-		nodes: [
-			{
-				val: "optimistic",
-				nodes: [
-					{
-						val: "inspired",
-						nodes: null,
-					},
-					{
-						val: "hopeful",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "trusting",
-				nodes: [
-					{
-						val: "intimate",
-						nodes: null,
-					},
-					{
-						val: "sensitive",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "peaceful",
-				nodes: [
-					{
-						val: "thankful",
-						nodes: null,
-					},
-					{
-						val: "loving",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "powerful",
-				nodes: [
-					{
-						val: "creative",
-						nodes: null,
-					},
-					{
-						val: "courageous",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "accepted",
-				nodes: [
-					{
-						val: "valued",
-						nodes: null,
-					},
-					{
-						val: "respected",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "proud",
-				nodes: [
-					{
-						val: "confident",
-						nodes: null,
-					},
-					{
-						val: "successful",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "interested",
-				nodes: [
-					{
-						val: "inquisitive",
-						nodes: null,
-					},
-					{
-						val: "curious",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "content",
-				nodes: [
-					{
-						val: "joyful",
-						nodes: null,
-					},
-					{
-						val: "free",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "playful",
-				nodes: [
-					{
-						val: "cheeky",
-						nodes: null,
-					},
-					{
-						val: "aroused",
-						nodes: null,
-					},
-				],
-			},
-		],
+const emotions = {
+	happy: {
+		optimistic: {
+			inspired: null,
+			hopeful: null,
+		},
+		trusting: {
+			intimate: null,
+			sensitive: null,
+		},
+		peaceful: {
+			thankful: null,
+			loving: null,
+		},
+		powerful: {
+			creative: null,
+			courageous: null,
+		},
+		accepted: {
+			valued: null,
+			respected: null,
+		},
+		proud: {
+			confident: null,
+			successful: null,
+		},
+		interested: {
+			inquisitive: null,
+			curious: null,
+		},
+		content: {
+			joyful: null,
+			free: null,
+		},
+		playful: {
+			cheeky: null,
+			aroused: null,
+		},
 	},
-	{
-		val: "angry",
-		nodes: [
-			{
-				val: "critical",
-				nodes: [
-					{
-						val: "dismissive",
-						nodes: null,
-					},
-					{
-						val: "skeptical",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "distant",
-				nodes: [
-					{
-						val: "numb",
-						nodes: null,
-					},
-					{
-						val: "withdrawn",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "frustrated",
-				nodes: [
-					{
-						val: "annoyed",
-						nodes: null,
-					},
-					{
-						val: "infuriated",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "aggressive",
-				nodes: [
-					{
-						val: "hostile",
-						nodes: null,
-					},
-					{
-						val: "provoked",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "mad",
-				nodes: [
-					{
-						val: "jealous",
-						nodes: null,
-					},
-					{
-						val: "furious",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "bitter",
-				nodes: [
-					{
-						val: "violated",
-						nodes: null,
-					},
-					{
-						val: "indignant",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "humiliated",
-				nodes: [
-					{
-						val: "ridiculed",
-						nodes: null,
-					},
-					{
-						val: "disrespected",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "let down",
-				nodes: [
-					{
-						val: "resentful",
-						nodes: null,
-					},
-					{
-						val: "betrayed",
-						nodes: null,
-					},
-				],
-			},
-		],
+	angry: {
+		critical: {
+			dismissive: null,
+			skeptical: null,
+		},
+		distant: {
+			numb: null,
+			withdrawn: null,
+		},
+		frustrated: {
+			annoyed: null,
+			infuriated: null,
+		},
+		aggressive: {
+			hostile: null,
+			provoked: null,
+		},
+		mad: {
+			jealous: null,
+			furious: null,
+		},
+		bitter: {
+			violated: null,
+			indignat: null,
+		},
+		humiliated: {
+			ridiculed: null,
+			disrespected: null,
+		},
+		"let down": {
+			resentful: null,
+			betrayed: null,
+		},
 	},
-	{
-		val: "sad",
-		nodes: [
-			{
-				val: "lonely",
-				nodes: [
-					{
-						val: "isolated",
-						nodes: null,
-					},
-					{
-						val: "abandoned",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "vulnerable",
-				nodes: [
-					{
-						val: "victimized",
-						nodes: null,
-					},
-					{
-						val: "fragile",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "despair",
-				nodes: [
-					{
-						val: "grief",
-						nodes: null,
-					},
-					{
-						val: "powerless",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "guilty",
-				nodes: [
-					{
-						val: "ashamed",
-						nodes: null,
-					},
-					{
-						val: "remorseful",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "depressed",
-				nodes: [
-					{
-						val: "empty",
-						nodes: null,
-					},
-					{
-						val: "inferior",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "hurt",
-				nodes: [
-					{
-						val: "disappointed",
-						nodes: null,
-					},
-					{
-						val: "embarassed",
-						nodes: null,
-					},
-				],
-			},
-		],
+	sad: {
+		lonely: {
+			isolated: null,
+			abandoned: null,
+		},
+		vulnerable: {
+			victimized: null,
+			fragile: null,
+		},
+		despair: {
+			grief: null,
+			powerless: null,
+		},
+		guilty: {
+			ashamed: null,
+			remorseful: null,
+		},
+		depressed: {
+			inferior: null,
+			empty: null,
+		},
+		hurt: {
+			embarassed: null,
+			disappointed: null,
+		},
 	},
-	{
-		val: "fearful",
-		nodes: [
-			{
-				val: "scared",
-				nodes: [
-					{
-						val: "helpless",
-						nodes: null,
-					},
-					{
-						val: "frightened",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "anxious",
-				nodes: [
-					{
-						val: "overwhelmed",
-						nodes: null,
-					},
-					{
-						val: "worried",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "insecure",
-				nodes: [
-					{
-						val: "inadequate",
-						nodes: null,
-					},
-					{
-						val: "inferior",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "weak",
-				nodes: [
-					{
-						val: "worthless",
-						nodes: null,
-					},
-					{
-						val: "insignificant",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "rejected",
-				nodes: [
-					{
-						val: "excluded",
-						nodes: null,
-					},
-					{
-						val: "persecuted",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "threatened",
-				nodes: [
-					{
-						val: "nervous",
-						nodes: null,
-					},
-					{
-						val: "exposed",
-						nodes: null,
-					},
-				],
-			},
-		],
+	fearful: {
+		scared: {
+			helpless: null,
+			frightened: null,
+		},
+		anxious: {
+			overwhelmed: null,
+			worried: null,
+		},
+		insecure: {
+			inadequate: null,
+			inferior: null,
+		},
+		weak: {
+			worthless: null,
+			insignificant: null,
+		},
+		rejected: {
+			excluded: null,
+			persecuted: null,
+		},
+		threatened: {
+			nervous: null,
+			exposed: null,
+		},
 	},
-	{
-		val: "surprised",
-		nodes: [
-			{
-				val: "startled",
-				nodes: [
-					{
-						val: "shocked",
-						nodes: null,
-					},
-					{
-						val: "dismayed",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "confused",
-				nodes: [
-					{
-						val: "disillusioned",
-						nodes: null,
-					},
-					{
-						val: "perplexed",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "amazed",
-				nodes: [
-					{
-						val: "astonished",
-						nodes: null,
-					},
-					{
-						val: "awe",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "excited",
-				nodes: [
-					{
-						val: "eager",
-						nodes: null,
-					},
-					{
-						val: "energetic",
-						nodes: null,
-					},
-				],
-			},
-		],
+	surprised: {
+		started: {
+			shocked: null,
+			dismayed: null,
+		},
+		confused: {
+			disillusioned: null,
+			perplexed: null,
+		},
+		amazed: {
+			astonished: null,
+			awe: null,
+		},
+		excited: {
+			eager: null,
+			energetic: null,
+		},
 	},
-	{
-		val: "disgusted",
-		nodes: [
-			{
-				val: "disapproving",
-				nodes: [
-					{
-						val: "judgemental",
-						nodes: null,
-					},
-					{
-						val: "embarassed",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "disappointed",
-				nodes: [
-					{
-						val: "appalled",
-						nodes: null,
-					},
-					{
-						val: "revolted",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "awful",
-				nodes: [
-					{
-						val: "nauseated",
-						nodes: null,
-					},
-					{
-						val: "detestable",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "repelled",
-				nodes: [
-					{
-						val: "horified",
-						nodes: null,
-					},
-					{
-						val: "hesitant",
-						nodes: null,
-					},
-				],
-			},
-		],
+	disgusted: {
+		disapproving: {
+			judgemental: null,
+			embarassed: null,
+		},
+		disappointed: {
+			appalled: null,
+			revolted: null,
+		},
+		awful: {
+			nauseated: null,
+			detestable: null,
+		},
+		repelled: {
+			horified: null,
+			hesitant: null,
+		},
 	},
-	{
-		val: "bad",
-		nodes: [
-			{
-				val: "bored",
-				nodes: [
-					{
-						val: "indifferent",
-						nodes: null,
-					},
-					{
-						val: "apathetic",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "busy",
-				nodes: [
-					{
-						val: "pressured",
-						nodes: null,
-					},
-					{
-						val: "rushed",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "stressed",
-				nodes: [
-					{
-						val: "overwhelmed",
-						nodes: null,
-					},
-					{
-						val: "out of control",
-						nodes: null,
-					},
-				],
-			},
-			{
-				val: "tired",
-				nodes: [
-					{
-						val: "sleepy",
-						nodes: null,
-					},
-					{
-						val: "unfocused",
-						nodes: null,
-					},
-				],
-			},
-		],
+	bad: {
+		bored: {
+			indifferent: null,
+			apathetic: null,
+		},
+		busy: {
+			pressured: null,
+			rushed: null,
+		},
+		stressed: {
+			overwhelmed: null,
+			"out of control": null,
+		},
+		tired: {
+			sleepy: null,
+			unfocused: null,
+		},
 	},
-];
+};
 
 export default emotions;
