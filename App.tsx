@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Button, FlatList, StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, Text, View } from "react-native";
+import Layout from "./src/components/Layout";
+import Header from "./src/components/Header";
 import emotions from "./src/data/emotions";
 
 export default function App() {
@@ -13,10 +15,8 @@ export default function App() {
 	const data = map ? Object.keys(map) : null;
 
 	return (
-		<View style={styles.container}>
-			<View>
-				<Text>Title</Text>
-			</View>
+		<Layout>
+			<Header />
 			<View>
 				{data ? (
 					<FlatList
@@ -35,15 +35,6 @@ export default function App() {
 			<View>
 				<Text>Status Bar</Text>
 			</View>
-		</View>
+		</Layout>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
-	},
-});
