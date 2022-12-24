@@ -12,7 +12,9 @@ const Header = () => {
 export default Header;
 
 const styles = StyleSheet.create({
-	container: {},
+	container: {
+		marginBottom: 4,
+	},
 	text: {
 		fontSize: 32,
 	},

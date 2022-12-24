@@ -1,20 +1,20 @@
 import { StyleSheet, Text, View, FlatList, Pressable } from "react-native";
 import React from "react";
 
-type Props = {
+interface FormProps {
 	data: string[];
-	onPress: () => void;
-};
+	onPress: (item: string) => void;
+}
 
-const Form = (props: Props) => {
+const Form = ({ data, onPress }: FormProps) => {
 	return (
-		<View>
+		<View style={styles.container}>
 			<FlatList
 				style={styles.list}
-				data={props.data}
-				renderItem={({ item }: { item: string }) => (
-					<Pressable style={styles.button} onPress={props.onPress}>
-						<Text>{item}</Text>
+				data={data}
+				renderItem={({ item }) => (
+					<Pressable style={styles.button} onPress={() => onPress(item)}>
+						<Text style={styles.text}>{item}</Text>
 					</Pressable>
 				)}
 			/>
@@ -25,6 +25,22 @@ const Form = (props: Props) => {
 export default Form;
 
 const styles = StyleSheet.create({
-	list: {},
-	button: {},
+	container: {
+		width: 240,
+	},
+	list: {
+		backgroundColor: "black",
+		borderWidth: 12,
+		borderColor: "red",
+		borderStyle: "solid",
+	},
+	button: {
+		backgroundColor: "cyan",
+		paddingHorizontal: 12,
+		paddingVertical: 4,
+		marginBottom: 16,
+	},
+	text: {
+		textAlign: "center",
+	},
 });

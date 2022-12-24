@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, FlatList, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Layout from "./src/components/Layout";
 import Header from "./src/components/Header";
+import Form from "./src/components/Form";
 import emotions from "./src/data/emotions";
 
 export default function App() {
@@ -17,24 +18,14 @@ export default function App() {
 	return (
 		<Layout>
 			<Header />
-			<View>
-				{data ? (
-					<FlatList
-						data={data}
-						renderItem={({ item }) => (
-							<Button
-								title={item}
-								onPress={() => setSelections([...selections, item])}
-							/>
-						)}
-					/>
-				) : (
-					<Text>{selections.join("")}</Text>
-				)}
-			</View>
-			<View>
-				<Text>Status Bar</Text>
-			</View>
+			{data ? (
+				<Form
+					data={data}
+					onPress={(item) => setSelections([...selections, item])}
+				/>
+			) : (
+				<Text>{selections.join("")}</Text>
+			)}
 		</Layout>
 	);
 }

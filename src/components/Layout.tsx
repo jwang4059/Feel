@@ -1,12 +1,12 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 
-type Props = {
+interface LayoutProps {
 	children: React.ReactNode;
-};
+}
 
-const Layout = (props: Props) => {
-	return <View style={styles.container}>{props.children}</View>;
+const Layout = ({ children }: LayoutProps) => {
+	return <View style={styles.container}>{children}</View>;
 };
 
 export default Layout;
