@@ -1,21 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import styled from "styled-components/native";
+
+const StyledView = styled.View`
+	margin-bottom: 4px;
+`;
+
+const StyledText = styled.Text`
+	font-size: 64px;
+`;
 
 const Header = () => {
 	return (
-		<View style={styles.container}>
-			<Text style={styles.text}>Feel</Text>
-		</View>
+		<StyledView>
+			<StyledText>Feel</StyledText>
+		</StyledView>
 	);
 };
 
 export default Header;
-
-const styles = StyleSheet.create({
-	container: {
-		marginBottom: 4,
-	},
-	text: {
-		fontSize: 32,
-	},
-});
