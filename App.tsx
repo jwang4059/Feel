@@ -3,6 +3,7 @@ import { Text } from "react-native";
 import Layout from "./src/components/Layout";
 import Header from "./src/components/Header";
 import Form from "./src/components/Form";
+import ResetButton from "./src/components/ResetButton";
 import emotions from "./src/data/emotions";
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
 			) : (
 				<Text>{selections.join("")}</Text>
 			)}
+			<ResetButton onPress={() => setSelections([])} />
 		</Layout>
 	);
 }
