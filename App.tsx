@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
 import Layout from "./src/components/Layout";
 import Header from "./src/components/Header";
-import Form from "./src/components/Form";
-import ResetButton from "./src/components/ResetButton";
+import Body from "./src/components/Body";
+import Footer from "./src/components/Footer";
 import emotions from "./src/data/emotions";
 
 export default function App() {
@@ -14,20 +13,17 @@ export default function App() {
 		map = map[selection];
 	}
 
-	const data = map ? Object.keys(map) : null;
+	const data = map ? Object.keys(map) : [];
 
 	return (
 		<Layout>
 			<Header />
-			{data ? (
-				<Form
-					data={data}
-					select={(item) => setSelections([...selections, item])}
-				/>
-			) : (
-				<Text>{selections.join("=>")}</Text>
-			)}
-			<ResetButton onPress={() => setSelections([])} />
+			<Body
+				data={data}
+				selections={selections}
+				select={(item) => setSelections([...selections, item])}
+			/>
+			<Footer reset={() => setSelections([])} />
 		</Layout>
 	);
 }
