@@ -11,7 +11,7 @@ const ResetButton = ({ onPress }: ResetButtonProps) => {
 		<View>
 			<Pressable onPress={onPress}>
 				<Text>
-					<Icon name={"restart"} size={30} color={"#900"} />;
+					<Icon name={"restart"} size={30} color={"#900"} />
 				</Text>
 			</Pressable>
 		</View>

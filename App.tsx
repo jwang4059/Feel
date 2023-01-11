@@ -22,10 +22,10 @@ export default function App() {
 			{data ? (
 				<Form
 					data={data}
-					onPress={(item) => setSelections([...selections, item])}
+					select={(item) => setSelections([...selections, item])}
 				/>
 			) : (
-				<Text>{selections.join("")}</Text>
+				<Text>{selections.join("=>")}</Text>
 			)}
 			<ResetButton onPress={() => setSelections([])} />
 		</Layout>

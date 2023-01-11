@@ -6,9 +6,11 @@ interface LayoutProps {
 }
 
 const StyledView = styled.View`
+	height: 100%;
+	width: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	background-color: #fff;
 	padding: 64px;
 `;
 
