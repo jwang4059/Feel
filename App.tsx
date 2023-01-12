@@ -3,23 +3,21 @@ import Layout from "./src/components/Layout";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
 import Footer from "./src/components/Footer";
-import emotions from "./src/data/emotions";
 
 export default function App() {
 	const [selections, setSelections] = useState<string[]>([]);
 
-	let map = emotions;
-	for (const selection of selections) {
-		map = map[selection];
-	}
+	// let map = emotions;
+	// for (const selection of selections) {
+	// 	map = map[selection];
+	// }
 
-	const data = map ? Object.keys(map) : [];
+	// const data = map ? Object.keys(map) : [];
 
 	return (
 		<Layout>
 			<Header />
 			<Body
-				data={data}
 				selections={selections}
 				select={(item) => setSelections([...selections, item])}
 			/>

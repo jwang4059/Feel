@@ -11,7 +11,7 @@ const StyledView = styled.View`
 const StyledFlatList = styled.FlatList`` as unknown as typeof FlatList;
 
 interface FormProps {
-	data: string[];
+	data: string[] | null;
 	select: (item: string) => void;
 }
 
