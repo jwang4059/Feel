@@ -20,19 +20,21 @@ const StyledText = styled.Text`
 
 interface ButtonProps {
 	title: string;
-	onPress: (item: string) => void;
+	onPress: () => void;
+	onLongPress: () => void;
 }
 
-const Button = ({ title, onPress }: ButtonProps) => {
+const Button = ({ title, onPress, onLongPress }: ButtonProps) => {
 	const [isPressedIn, setIsPressedIn] = useState<boolean>(false);
 
 	return (
 		<StyledView>
 			<StyledPressable
 				style={{ backgroundColor: isPressedIn ? "#4755698a" : "#47556900" }}
-				onPress={() => onPress(title)}
+				onPress={onPress}
 				onPressIn={() => setIsPressedIn(true)}
 				onPressOut={() => setIsPressedIn(false)}
+				onLongPress={onLongPress}
 			>
 				<StyledText>{title}</StyledText>
 			</StyledPressable>

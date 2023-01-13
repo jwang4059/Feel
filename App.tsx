@@ -19,25 +19,30 @@ const Container = styled.View`
 `;
 
 export default function App() {
-	// const [selections, setSelections] = useState<string[]>([]);
+	const [selections, setSelections] = useState<string[]>([]);
+	const [isOpen, setIsOpen] = useState<boolean>(false);
 
 	return (
 		<Layout>
-			<Drawer>
-				<Definition
-					word={"happy"}
-					partOfSpeech={"adjective"}
-					definition={"i am happy!"}
-				/>
-			</Drawer>
-			{/* <Container>
+			{isOpen && (
+				<Drawer>
+					<Definition
+						word={"happy"}
+						partOfSpeech={"adjective"}
+						definition={"i am happy!"}
+						close={() => setIsOpen(false)}
+					/>
+				</Drawer>
+			)}
+			<Container>
 				<Header />
 				<Main
 					selections={selections}
 					select={(item) => setSelections([...selections, item])}
+					open={() => setIsOpen(true)}
 				/>
 				<Footer reset={() => setSelections([])} />
-			</Container> */}
+			</Container>
 		</Layout>
 	);
 }

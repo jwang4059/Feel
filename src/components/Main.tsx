@@ -16,9 +16,10 @@ interface EmotionMap {
 interface MainProps {
 	selections: string[];
 	select: (item: string) => void;
+	open: () => void;
 }
 
-const Main = ({ selections, select }: MainProps) => {
+const Main = ({ selections, select, open }: MainProps) => {
 	let map: EmotionMap | null = emotions["map"];
 	for (const selection of selections) {
 		if (map) map = map[selection]["map"];
@@ -30,7 +31,7 @@ const Main = ({ selections, select }: MainProps) => {
 	return (
 		<StyledView>
 			{data ? (
-				<Form data={data} select={select} />
+				<Form data={data} select={select} open={open} />
 			) : (
 				<StyledText>{selections.length}</StyledText>
 			)}
