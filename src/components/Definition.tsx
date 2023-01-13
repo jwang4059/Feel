@@ -1,7 +1,7 @@
 import React from "react";
-import { Pressable, Text } from "react-native";
 import styled from "styled-components/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import IconButton from "./IconButton";
 
 const StyledView = styled.View`
 	height: 100%;
@@ -38,11 +38,9 @@ const Definition = ({
 }: DefinitionProps) => {
 	return (
 		<StyledView>
-			<Pressable onPress={close}>
-				<Text>
-					<Icon name={"close"} size={30} color={"#900"} />
-				</Text>
-			</Pressable>
+			<IconButton onPress={close}>
+				<Icon name={"close"} size={30} color={"#900"} />
+			</IconButton>
 			<WordText>{word}</WordText>
 			<PartOfSpeechText>[{partOfSpeech}]</PartOfSpeechText>
 			<DefinitionText>{definition}</DefinitionText>

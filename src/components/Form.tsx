@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList } from "react-native";
 import styled from "styled-components/native";
-import Button from "./Button";
+import InputButton from "./InputButton";
 
 const StyledView = styled.View`
 	height: 600px;
@@ -22,7 +22,7 @@ const Form = ({ data, select, open }: FormProps) => {
 			<StyledFlatList
 				data={data}
 				renderItem={({ item }) => (
-					<Button
+					<InputButton
 						title={item}
 						onPress={() => select(item)}
 						onLongPress={open}

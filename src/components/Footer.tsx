@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
-import ResetButton from "./ResetButton";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import IconButton from "./IconButton";
 
 const StyledView = styled.View`
 	display: flex;
@@ -14,7 +15,9 @@ interface FooterProps {
 const Footer = ({ reset }: FooterProps) => {
 	return (
 		<StyledView>
-			<ResetButton onPress={reset} />
+			<IconButton onPress={reset}>
+				<Icon name={"restart"} size={30} color={"#900"} />
+			</IconButton>
 		</StyledView>
 	);
 };
