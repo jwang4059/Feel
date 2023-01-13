@@ -1,4 +1,12 @@
-const emotions = {
+export interface Emotion {
+	word: string | null;
+	definition: string | null;
+	map: {
+		[key: string]: Emotion;
+	} | null;
+}
+
+const emotions: Emotion = {
 	word: "emotions",
 	definition: null,
 	map: {

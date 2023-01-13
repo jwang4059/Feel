@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import Form from "./Form";
-import emotions from "../data/emotions";
+import emotions, { Emotion } from "../data/emotions";
 
 const StyledView = styled.View`
 	flex-grow: 1;
@@ -9,24 +9,16 @@ const StyledView = styled.View`
 
 const StyledText = styled.Text``;
 
-interface Emotion {
-	word: string | null;
-	definition: string | null;
-	map: {
-		[key: string]: Emotion;
-	} | null;
-}
-
 interface EmotionMap {
 	[key: string]: Emotion;
 }
 
-interface BodyProps {
+interface MainProps {
 	selections: string[];
 	select: (item: string) => void;
 }
 
-const Body = ({ selections, select }: BodyProps) => {
+const Main = ({ selections, select }: MainProps) => {
 	let map: EmotionMap | null = emotions["map"];
 	for (const selection of selections) {
 		if (map) map = map[selection]["map"];
@@ -46,4 +38,4 @@ const Body = ({ selections, select }: BodyProps) => {
 	);
 };
 
-export default Body;
+export default Main;
