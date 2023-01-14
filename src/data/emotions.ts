@@ -7,6 +7,10 @@ export interface Emotion {
 	} | null;
 }
 
+export interface EmotionMap {
+	[key: string]: Emotion;
+}
+
 const emotions: Emotion = {
 	word: "emotions",
 	partOfSpeech: null,

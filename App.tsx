@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import styled from "styled-components/native";
 import Layout from "./src/components/Layout";
 import Header from "./src/components/Header";
 import Main from "./src/components/Main";
 import Footer from "./src/components/Footer";
 import Definition from "./src/components/Definition";
-
-import styled from "styled-components/native";
+import { Emotion } from "./src/data/emotions";
 
 const Drawer = styled.View`
 	width: 180px;
@@ -21,17 +21,13 @@ const Container = styled.View`
 export default function App() {
 	const [selections, setSelections] = useState<string[]>([]);
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [emotion, setEmotion] = useState<Emotion | null>(null);
 
 	return (
 		<Layout>
 			{isOpen && (
 				<Drawer>
-					<Definition
-						word={"happy"}
-						partOfSpeech={"adjective"}
-						definition={"i am happy!"}
-						close={() => setIsOpen(false)}
-					/>
+					<Definition emotion={emotion} close={() => setIsOpen(false)} />
 				</Drawer>
 			)}
 			<Container>
@@ -39,6 +35,7 @@ export default function App() {
 				<Main
 					selections={selections}
 					select={(item) => setSelections([...selections, item])}
+					setEmotion={setEmotion}
 					open={() => setIsOpen(true)}
 				/>
 				<Footer reset={() => setSelections([])} />

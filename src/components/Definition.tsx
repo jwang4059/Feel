@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components/native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import IconButton from "./IconButton";
+import { Emotion } from "../data/emotions";
+import { View } from "react-native";
 
 const StyledView = styled.View`
 	height: 100%;
@@ -24,26 +26,23 @@ const PartOfSpeechText = styled.Text`
 const DefinitionText = styled.Text``;
 
 interface DefinitionProps {
-	word: string;
-	partOfSpeech: string;
-	definition: string;
+	emotion: Emotion | null;
 	close: () => void;
 }
 
-const Definition = ({
-	word,
-	partOfSpeech,
-	definition,
-	close,
-}: DefinitionProps) => {
+const Definition = ({ emotion, close }: DefinitionProps) => {
 	return (
 		<StyledView>
 			<IconButton onPress={close}>
 				<Icon name={"close"} size={30} color={"#900"} />
 			</IconButton>
-			<WordText>{word}</WordText>
-			<PartOfSpeechText>[{partOfSpeech}]</PartOfSpeechText>
-			<DefinitionText>{definition}</DefinitionText>
+			{emotion && (
+				<View>
+					<WordText>{emotion.word}</WordText>
+					<PartOfSpeechText>[{emotion.partOfSpeech}]</PartOfSpeechText>
+					<DefinitionText>{emotion.definition}</DefinitionText>
+				</View>
+			)}
 		</StyledView>
 	);
 };
