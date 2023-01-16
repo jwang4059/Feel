@@ -8,14 +8,23 @@ import Definition from "./src/components/Definition";
 import { Emotion } from "./src/data/emotions";
 
 const Drawer = styled.View`
+	height: 100%;
 	width: 180px;
-	background-color: gray;
+	background-color: white;
+	border-right-width: 1px;
+	border-color: black;
+	border-style: solid;
+	position: absolute;
+	margin-top: 48px;
+	padding: 12px;
 `;
 
 const Container = styled.View`
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: white;
 `;
 
 export default function App() {
@@ -25,11 +34,6 @@ export default function App() {
 
 	return (
 		<Layout>
-			{isOpen && (
-				<Drawer>
-					<Definition emotion={emotion} close={() => setIsOpen(false)} />
-				</Drawer>
-			)}
 			<Container>
 				<Header />
 				<Main
@@ -40,6 +44,11 @@ export default function App() {
 				/>
 				<Footer reset={() => setSelections([])} />
 			</Container>
+			{isOpen && (
+				<Drawer onTouchStart={() => setIsOpen(false)}>
+					<Definition emotion={emotion} close={() => setIsOpen(false)} />
+				</Drawer>
+			)}
 		</Layout>
 	);
 }

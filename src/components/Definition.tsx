@@ -8,8 +8,6 @@ import { View } from "react-native";
 const StyledView = styled.View`
 	height: 100%;
 	width: 100%;
-	padding: 12px;
-	background-color: teal;
 `;
 
 const WordText = styled.Text`
