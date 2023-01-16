@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
+import emotions, { EmotionMap } from "../data/emotions";
 import Form from "./Form";
-import emotions, { Emotion, EmotionMap } from "../data/emotions";
 
 const StyledView = styled.View`
 	flex-grow: 1;
@@ -12,21 +12,18 @@ const StyledText = styled.Text``;
 interface MainProps {
 	selections: string[];
 	select: (item: string) => void;
-	setEmotion: (e: Emotion | null) => void;
-	open: () => void;
 }
 
-const Main = ({ selections, select, setEmotion, open }: MainProps) => {
+const Main = ({ selections, select }: MainProps) => {
 	let map: EmotionMap | null = emotions["map"];
 	for (const selection of selections) {
 		if (map) map = map[selection]["map"];
-		else map = null;
 	}
 
 	return (
 		<StyledView>
 			{map ? (
-				<Form map={map} select={select} setEmotion={setEmotion} open={open} />
+				<Form map={map} select={select} />
 			) : (
 				<StyledText>{selections.length}</StyledText>
 			)}

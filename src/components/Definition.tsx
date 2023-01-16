@@ -1,13 +1,11 @@
 import React from "react";
-import styled from "styled-components/native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import IconButton from "./IconButton";
-import { Emotion } from "../data/emotions";
 import { View } from "react-native";
+import styled from "styled-components/native";
+import { Emotion } from "../data/emotions";
 
 const StyledView = styled.View`
-	height: 100%;
 	width: 100%;
+	padding: 4px;
 `;
 
 const WordText = styled.Text`
@@ -28,12 +26,9 @@ interface DefinitionProps {
 	close: () => void;
 }
 
-const Definition = ({ emotion, close }: DefinitionProps) => {
+const Definition = ({ emotion }: DefinitionProps) => {
 	return (
 		<StyledView>
-			<IconButton onPress={close}>
-				<Icon name={"close"} size={30} color={"#900"} />
-			</IconButton>
 			{emotion && (
 				<View>
 					<WordText>{emotion.word}</WordText>
