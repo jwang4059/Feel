@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text } from "react-native";
 import styled from "styled-components/native";
-import { Emotion, EmotionMap } from "../data/emotions";
+import { Emotion } from "../data/emotions";
 import Definition from "./Definition";
 import InputButton from "./InputButton";
 
@@ -24,14 +24,12 @@ const CloseButton = styled.Pressable`
 `;
 
 interface ListItemProps {
-	map: EmotionMap | null;
-	item: string;
-	select: (item: string) => void;
+	emotion: Emotion;
+	select?: (item: string) => void;
 }
 
-const ListItem = ({ map, item, select }: ListItemProps) => {
+const ListItem = ({ emotion, select }: ListItemProps) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const emotion: Emotion | null = map ? map[item] : null;
 
 	return (
 		<StyledView
@@ -47,10 +45,10 @@ const ListItem = ({ map, item, select }: ListItemProps) => {
 			}
 		>
 			<InputButton
-				title={item}
+				title={emotion.word}
 				onPress={() => {
 					setIsOpen(false);
-					select(item);
+					if (select) select(emotion.word);
 				}}
 				onLongPress={() => setIsOpen(!isOpen)}
 			/>

@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList } from "react-native";
 import styled from "styled-components/native";
-import { EmotionMap } from "../data/emotions";
+import emotions, { EmotionMap } from "../data/emotions";
 import ListItem from "./ListItem";
 
 const StyledView = styled.View`
@@ -13,12 +13,18 @@ const StyledFlatList = styled.FlatList`
 ` as unknown as typeof FlatList;
 
 interface FormProps {
-	map: EmotionMap | null;
+	selections: string[];
 	select: (item: string) => void;
 }
 
-const Form = ({ map, select }: FormProps) => {
-	const data: string[] | null = map ? Object.keys(map) : null;
+const Form = ({ selections, select }: FormProps) => {
+	let map: EmotionMap | undefined = emotions["map"];
+
+	for (const selection of selections) {
+		if (map) map = map[selection]["map"];
+	}
+
+	const data = map ? Object.values(map).map(({ map: _, ...rest }) => rest) : [];
 
 	return (
 		<StyledView>
@@ -28,9 +34,7 @@ const Form = ({ map, select }: FormProps) => {
 					alignItems: "center",
 				}}
 				data={data}
-				renderItem={({ item }) => (
-					<ListItem map={map} item={item} select={select} />
-				)}
+				renderItem={({ item }) => <ListItem emotion={item} select={select} />}
 			/>
 		</StyledView>
 	);

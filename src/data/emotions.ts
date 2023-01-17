@@ -1,10 +1,10 @@
 export interface Emotion {
-	word: string | null;
+	word: string;
 	partOfSpeech: "adjective" | "noun" | "verb" | null;
 	definition: string | null;
-	map: {
+	map?: {
 		[key: string]: Emotion;
-	} | null;
+	};
 }
 
 export interface EmotionMap {
@@ -31,13 +31,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"aroused, animated, or imbued with the spirit to do something, by or as if it by supernatural or divine influence",
-							map: null,
 						},
 						hopeful: {
 							word: "hopeful",
 							partOfSpeech: "adjective",
 							definition: "feeling or inspiring optimism about a future event",
-							map: null,
 						},
 					},
 				},
@@ -51,14 +49,12 @@ const emotions: Emotion = {
 							word: "intimate",
 							partOfSpeech: "adjective",
 							definition: "closely aquainted; familiar, close",
-							map: null,
 						},
 						sensitive: {
 							word: "sensitive",
 							partOfSpeech: "adjective",
 							definition:
 								"having or displaying a quick and delicate appreciation of other's feelings",
-							map: null,
 						},
 					},
 				},
@@ -71,13 +67,11 @@ const emotions: Emotion = {
 							word: "thankful",
 							partOfSpeech: "adjective",
 							definition: "expressing gratitude and relief",
-							map: null,
 						},
 						loving: {
 							word: "loving",
 							partOfSpeech: "adjective",
 							definition: "feeling or showing love or great care",
-							map: null,
 						},
 					},
 				},
@@ -91,13 +85,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"relating to or involving the imagination or original ideas, especially in the production of an artistic work",
-							map: null,
 						},
 						courageous: {
 							word: "courageous",
 							partOfSpeech: "adjective",
 							definition: "not deterred by danger or pain; brave",
-							map: null,
 						},
 					},
 				},
@@ -110,14 +102,12 @@ const emotions: Emotion = {
 							word: "valued",
 							partOfSpeech: "adjective",
 							definition: "considered to be important or beneficial; cherished",
-							map: null,
 						},
 						respected: {
 							word: "respected",
 							partOfSpeech: "adjective",
 							definition:
 								"admired by many people for your qualities or achievements",
-							map: null,
 						},
 					},
 				},
@@ -132,14 +122,12 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"sure of oneself; having no uncertainty about one's own abilities, correctness, successfulness, etc.; self-confident; bold",
-							map: null,
 						},
 						successful: {
 							word: "successful",
 							partOfSpeech: "adjective",
 							definition:
 								"having attained wealth, position, honors, or the like",
-							map: null,
 						},
 					},
 				},
@@ -153,13 +141,11 @@ const emotions: Emotion = {
 							word: "inquisitive",
 							partOfSpeech: "adjective",
 							definition: "curious or inquiring",
-							map: null,
 						},
 						curious: {
 							word: "curious",
 							partOfSpeech: "adjective",
 							definition: "eager to know or learn something",
-							map: null,
 						},
 					},
 				},
@@ -173,14 +159,12 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"feeling, expressing, or causing great pleasure and happiness",
-							map: null,
 						},
 						free: {
 							word: "free",
 							partOfSpeech: "adjective",
 							definition:
 								"not under the control or in the power of another; able to act or be done as one wishes",
-							map: null,
 						},
 					},
 				},
@@ -194,13 +178,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"impudent or irreverent, typically in an endearing or amusing way",
-							map: null,
 						},
 						aroused: {
 							word: "aroused",
 							partOfSpeech: "adjective",
 							definition: "showing or feeling sexual excitement",
-							map: null,
 						},
 					},
 				},
@@ -223,13 +205,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"feeling or showing that something is unworthy of consideration",
-							map: null,
 						},
 						skeptical: {
 							word: "skeptical",
 							partOfSpeech: "adjective",
 							definition: "not easily convinced; having doubts or reservations",
-							map: null,
 						},
 					},
 				},
@@ -243,13 +223,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"lacking or deficient in emotion or feeling; indifferent",
-							map: null,
 						},
 						withdrawn: {
 							word: "withdrawn",
 							partOfSpeech: "adjective",
 							definition: "not wanting to communicate with other people",
-							map: null,
 						},
 					},
 				},
@@ -263,13 +241,11 @@ const emotions: Emotion = {
 							word: "annoyed",
 							partOfSpeech: "adjective",
 							definition: "slightly angry; irritated",
-							map: null,
 						},
 						infuriated: {
 							word: "infuriated",
 							partOfSpeech: "adjective",
 							definition: "marked by extreme anger",
-							map: null,
 						},
 					},
 				},
@@ -283,13 +259,11 @@ const emotions: Emotion = {
 							word: "hostile",
 							partOfSpeech: "adjective",
 							definition: "unfriendly; antagonistic",
-							map: null,
 						},
 						provoked: {
 							word: "provoked",
 							partOfSpeech: "adjective",
 							definition: "angered or enranged",
-							map: null,
 						},
 					},
 				},
@@ -303,14 +277,12 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"feeling or showing envy of someone or their achievements and advantages",
-							map: null,
 						},
 						furious: {
 							word: "furious",
 							partOfSpeech: "adjective",
 							definition:
 								"full of fury, violent passion, or rage; extremely angry; enraged",
-							map: null,
 						},
 					},
 				},
@@ -324,14 +296,12 @@ const emotions: Emotion = {
 							word: "violated",
 							partOfSpeech: "adjective",
 							definition: "treated irreverently or sacrilegiously",
-							map: null,
 						},
 						indignant: {
 							word: "indignant",
 							partOfSpeech: "adjective",
 							definition:
 								"feeling or showing anger or annoyance at what is perceived as unfair treatment",
-							map: null,
 						},
 					},
 				},
@@ -346,13 +316,11 @@ const emotions: Emotion = {
 							partOfSpeech: "verb",
 							definition:
 								"subject (someone or something) to comptemptuous and dismissive language or behavior",
-							map: null,
 						},
 						disrespected: {
 							word: "disrespected",
 							partOfSpeech: "verb",
 							definition: "show a lack of respect for; insult",
-							map: null,
 						},
 					},
 				},
@@ -367,14 +335,12 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"feeling or expressing bitterness or indignation at having been treated unfairly",
-							map: null,
 						},
 						betrayed: {
 							word: "betrayed",
 							partOfSpeech: "verb",
 							definition:
 								"to disappoint the hopes or expectations of; be disloyal to",
-							map: null,
 						},
 					},
 				},
@@ -395,13 +361,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"having minimal contact or little in common with others",
-							map: null,
 						},
 						abandoned: {
 							word: "abandoned",
 							partOfSpeech: "adjective",
 							definition: "having been deserted or cast off",
-							map: null,
 						},
 					},
 				},
@@ -415,13 +379,11 @@ const emotions: Emotion = {
 							word: "victimized",
 							partOfSpeech: "verb",
 							definition: "single (someone) out for cruel or unjust treatment",
-							map: null,
 						},
 						fragile: {
 							word: "fragile",
 							partOfSpeech: "adjective",
 							definition: "not strong or sturdy; delicate and vulnerable",
-							map: null,
 						},
 					},
 				},
@@ -435,13 +397,11 @@ const emotions: Emotion = {
 							partOfSpeech: "noun",
 							definition:
 								"deep sorrow, especially that caused by someone's death",
-							map: null,
 						},
 						powerless: {
 							word: "powerless",
 							partOfSpeech: "adjective",
 							definition: "without ability, influence, or power",
-							map: null,
 						},
 					},
 				},
@@ -455,14 +415,12 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"embarassed or guilty because of one's actions, characteristics, or associations",
-							map: null,
 						},
 						remorseful: {
 							word: "remorseful",
 							partOfSpeech: "adjective",
 							definition:
 								"feeling or expressing pain or sorrow for sins or offenses",
-							map: null,
 						},
 					},
 				},
@@ -475,14 +433,12 @@ const emotions: Emotion = {
 							word: "embarassed",
 							partOfSpeech: "adjective",
 							definition: "feeling or caused to feel uneasy and self-conscious",
-							map: null,
 						},
 						disappointed: {
 							word: "disappointed",
 							partOfSpeech: "adjective",
 							definition:
 								"sad or displeased because someone or something has failed to fulfill one's hopes or expectations",
-							map: null,
 						},
 					},
 				},
@@ -495,13 +451,11 @@ const emotions: Emotion = {
 							word: "inferior",
 							partOfSpeech: "adjective",
 							definition: "lower in rank, status, or quality",
-							map: null,
 						},
 						empty: {
 							word: "empty",
 							partOfSpeech: "adjective",
 							definition: "having no value or purpose",
-							map: null,
 						},
 					},
 				},
@@ -522,13 +476,11 @@ const emotions: Emotion = {
 							word: "helpless",
 							partOfSpeech: "adjective",
 							definition: "unable to defend oneself or to act without help",
-							map: null,
 						},
 						frightened: {
 							word: "frightened",
 							partOfSpeech: "adjective",
 							definition: "thrown into a state of intense fear or desperation",
-							map: null,
 						},
 					},
 				},
@@ -542,14 +494,12 @@ const emotions: Emotion = {
 							word: "overwhelmed",
 							partOfSpeech: "adjective",
 							definition: "completely overcome in mind or feeling",
-							map: null,
 						},
 						worried: {
 							word: "worried",
 							partOfSpeech: "adjective",
 							definition:
 								"anxious or troubled about actual or potential problems",
-							map: null,
 						},
 					},
 				},
@@ -562,13 +512,11 @@ const emotions: Emotion = {
 							word: "inadequate",
 							partOfSpeech: "adjective",
 							definition: "unable to deal with a situation or with life",
-							map: null,
 						},
 						inferior: {
 							word: "inferior",
 							partOfSpeech: "adjective",
 							definition: "lower in rank, status, or quality",
-							map: null,
 						},
 					},
 				},
@@ -582,13 +530,11 @@ const emotions: Emotion = {
 							word: "worthless",
 							partOfSpeech: "adjective",
 							definition: "having no good qualities; deserving contempt",
-							map: null,
 						},
 						insignificant: {
 							word: "insignificant",
 							partOfSpeech: "adjective",
 							definition: "without power or influence",
-							map: null,
 						},
 					},
 				},
@@ -602,14 +548,12 @@ const emotions: Emotion = {
 							partOfSpeech: "verb",
 							definition:
 								"deny (someone) access to or bar (someone) from a place, group, or privilege",
-							map: null,
 						},
 						persecuted: {
 							word: "persecuted",
 							partOfSpeech: "adjective",
 							definition:
 								"persistently harassed or oppressed, especially because of religiousor political beliefs, ethnic or racial origin, gender identity, or sexual orientation",
-							map: null,
 						},
 					},
 				},
@@ -623,13 +567,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"easily agitated or alarmed; tending to be anxious; highly strung",
-							map: null,
 						},
 						exposed: {
 							word: "exposed",
 							partOfSpeech: "adjective",
 							definition: "in a vulnerable position or situation",
-							map: null,
 						},
 					},
 				},
@@ -650,14 +592,12 @@ const emotions: Emotion = {
 							word: "shocked",
 							partOfSpeech: "adjective",
 							definition: "surprised and upset",
-							map: null,
 						},
 						dismayed: {
 							word: "dismayed",
 							partOfSpeech: "adjective",
 							definition:
 								"thoroughly disheartened, as by sudden danger or trouble",
-							map: null,
 						},
 					},
 				},
@@ -671,13 +611,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"disappointed in someone or something that one discovers to be less good than one had believed",
-							map: null,
 						},
 						perplexed: {
 							word: "perplexed",
 							partOfSpeech: "adjective",
 							definition: "completely baffled; very puzzled",
-							map: null,
 						},
 					},
 				},
@@ -691,14 +629,12 @@ const emotions: Emotion = {
 							word: "astonished",
 							partOfSpeech: "adjective",
 							definition: "greatly surprised or impressed; amazed",
-							map: null,
 						},
 						awe: {
 							word: "awe",
 							partOfSpeech: "noun",
 							definition:
 								"a feeling of reverential respect mixed with fear or wonder",
-							map: null,
 						},
 					},
 				},
@@ -711,14 +647,12 @@ const emotions: Emotion = {
 							word: "eager",
 							partOfSpeech: "adjective",
 							definition: "wanting to do or have something very much",
-							map: null,
 						},
 						energetic: {
 							word: "energetic",
 							partOfSpeech: "adjective",
 							definition:
 								"possesing or exhibiting energy, especially in abundance; vigorous",
-							map: null,
 						},
 					},
 				},
@@ -739,13 +673,11 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"having or displaying and excessively critical point of view",
-							map: null,
 						},
 						embarassed: {
 							word: "embarassed",
 							partOfSpeech: "adjective",
 							definition: "feeling or caused to feel uneasy and self-conscious",
-							map: null,
 						},
 					},
 				},
@@ -759,13 +691,11 @@ const emotions: Emotion = {
 							word: "appalled",
 							partOfSpeech: "adjective",
 							definition: "overcome with horror, shock, outrage, or dismay",
-							map: null,
 						},
 						revolted: {
 							word: "revolted",
 							partOfSpeech: "adjective",
 							definition: "disgusted",
-							map: null,
 						},
 					},
 				},
@@ -778,13 +708,11 @@ const emotions: Emotion = {
 							word: "nauseated",
 							partOfSpeech: "adjective",
 							definition: "filled with disgust",
-							map: null,
 						},
 						detestable: {
 							word: "detestable",
 							partOfSpeech: "adjective",
 							definition: "deserving intense dislike",
-							map: null,
 						},
 					},
 				},
@@ -797,13 +725,11 @@ const emotions: Emotion = {
 							word: "horrified",
 							partOfSpeech: "adjective",
 							definition: "showing or indicating extreme shock or horror",
-							map: null,
 						},
 						hesitant: {
 							word: "hesitant",
 							partOfSpeech: "adjective",
 							definition: "tentative, unsure, or slow in acting or speaking",
-							map: null,
 						},
 					},
 				},
@@ -825,14 +751,12 @@ const emotions: Emotion = {
 							partOfSpeech: "adjective",
 							definition:
 								"having no particular interest or sympathy; unconcerned",
-							map: null,
 						},
 						apathetic: {
 							word: "apathetic",
 							partOfSpeech: "adjective",
 							definition:
 								"showing or feeling no interest, enthusiasm, or concern",
-							map: null,
 						},
 					},
 				},
@@ -846,13 +770,11 @@ const emotions: Emotion = {
 							partOfSpeech: "verb",
 							definition:
 								"attempt to persuade or coerce (someone) into doing something",
-							map: null,
 						},
 						rushed: {
 							word: "rushed",
 							partOfSpeech: "adjective",
 							definition: "short of time; hurrying",
-							map: null,
 						},
 					},
 				},
@@ -865,13 +787,11 @@ const emotions: Emotion = {
 							word: "overwhelmed",
 							partOfSpeech: "adjective",
 							definition: "completely overcome in mind or feeling",
-							map: null,
 						},
 						"out of control": {
 							word: "out of control",
 							partOfSpeech: "adjective",
 							definition: "no longer possible to manage",
-							map: null,
 						},
 					},
 				},
@@ -884,14 +804,12 @@ const emotions: Emotion = {
 							word: "sleepy",
 							partOfSpeech: "adjective",
 							definition: "needing or ready for sleep",
-							map: null,
 						},
 						unfocused: {
 							word: "unfocused",
 							partOfSpeech: "adjective",
 							definition:
 								"not seeing clearly; appearing glazed or expressionless",
-							map: null,
 						},
 					},
 				},

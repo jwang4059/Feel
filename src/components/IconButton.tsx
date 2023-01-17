@@ -1,16 +1,23 @@
 import React from "react";
-import { Text, Pressable } from "react-native";
+import { Text } from "react-native";
+import styled from "styled-components/native";
+
+const StyledPressable = styled.Pressable`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
 interface IconButtonProps {
 	children: React.ReactNode;
-	onPress: () => void;
+	onPress?: () => void;
 }
 
 const IconButton = ({ children, onPress }: IconButtonProps) => {
 	return (
-		<Pressable onPress={onPress}>
+		<StyledPressable onPress={onPress}>
 			<Text>{children}</Text>
-		</Pressable>
+		</StyledPressable>
 	);
 };
 
