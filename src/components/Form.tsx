@@ -8,7 +8,9 @@ const StyledView = styled.View`
 	height: 600px;
 `;
 
-const StyledFlatList = styled.FlatList`` as unknown as typeof FlatList;
+const StyledFlatList = styled.FlatList`
+	width: 350px;
+` as unknown as typeof FlatList;
 
 interface FormProps {
 	map: EmotionMap | null;

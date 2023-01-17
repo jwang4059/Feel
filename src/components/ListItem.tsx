@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Text } from "react-native";
 import styled from "styled-components/native";
 import { Emotion, EmotionMap } from "../data/emotions";
 import Definition from "./Definition";
@@ -8,6 +9,18 @@ const StyledView = styled.View`
 	width: 300px;
 	display: flex;
 	align-items: center;
+	margin-bottom: 12px;
+`;
+
+const Card = styled.View`
+	width: 100%;
+	display: flex;
+	align-items: center;
+`;
+
+const CloseButton = styled.Pressable`
+	border: 1px solid black;
+	padding: 4px 12px;
 `;
 
 interface ListItemProps {
@@ -25,9 +38,8 @@ const ListItem = ({ map, item, select }: ListItemProps) => {
 			style={
 				isOpen
 					? {
-							borderWidth: 1,
-							borderColor: "black",
-							borderStyle: "dotted",
+							backgroundColor: "#fafafa",
+							borderRadius: 4,
 							padding: 8,
 							marginBottom: 8,
 					  }
@@ -36,11 +48,19 @@ const ListItem = ({ map, item, select }: ListItemProps) => {
 		>
 			<InputButton
 				title={item}
-				onPress={() => select(item)}
+				onPress={() => {
+					setIsOpen(false);
+					select(item);
+				}}
 				onLongPress={() => setIsOpen(!isOpen)}
 			/>
 			{isOpen && (
-				<Definition emotion={emotion} close={() => setIsOpen(false)} />
+				<Card>
+					<Definition emotion={emotion} />
+					<CloseButton onPress={() => setIsOpen(false)}>
+						<Text>Close</Text>
+					</CloseButton>
+				</Card>
 			)}
 		</StyledView>
 	);

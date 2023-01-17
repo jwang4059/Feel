@@ -8,8 +8,7 @@ const StyledPressable = styled.Pressable`
 	justify-content: center;
 	align-items: center;
 	padding: 12px 4px;
-	border: 1px solid black;
-	margin-bottom: 8px;
+	border-radius: 4px;
 `;
 
 const StyledText = styled.Text`
@@ -18,8 +17,8 @@ const StyledText = styled.Text`
 
 interface InputButtonProps {
 	title: string;
-	onPress: () => void;
-	onLongPress: () => void;
+	onPress?: () => void;
+	onLongPress?: () => void;
 }
 
 const InputButton = ({ title, onPress, onLongPress }: InputButtonProps) => {
@@ -27,7 +26,7 @@ const InputButton = ({ title, onPress, onLongPress }: InputButtonProps) => {
 
 	return (
 		<StyledPressable
-			style={{ backgroundColor: isPressedIn ? "#4755698a" : "#47556900" }}
+			style={{ backgroundColor: isPressedIn ? "#d4d4d4" : "#f5f5f5" }}
 			onPress={onPress}
 			onLongPress={onLongPress}
 			onPressIn={() => setIsPressedIn(true)}

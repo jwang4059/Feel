@@ -16,7 +16,7 @@ const Footer = ({ reset }: FooterProps) => {
 	return (
 		<StyledView>
 			<IconButton onPress={reset}>
-				<Icon name={"restart"} size={30} color={"#900"} />
+				<Icon name={"restart"} size={30} color={"#f5f5f5"} />
 			</IconButton>
 		</StyledView>
 	);

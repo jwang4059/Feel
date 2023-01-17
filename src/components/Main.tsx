@@ -2,12 +2,11 @@ import React from "react";
 import styled from "styled-components/native";
 import emotions, { EmotionMap } from "../data/emotions";
 import Form from "./Form";
+import Result from "./Result";
 
 const StyledView = styled.View`
 	flex-grow: 1;
 `;
-
-const StyledText = styled.Text``;
 
 interface MainProps {
 	selections: string[];
@@ -25,7 +24,7 @@ const Main = ({ selections, select }: MainProps) => {
 			{map ? (
 				<Form map={map} select={select} />
 			) : (
-				<StyledText>{selections.length}</StyledText>
+				<Result map={emotions["map"]} selections={selections} />
 			)}
 		</StyledView>
 	);

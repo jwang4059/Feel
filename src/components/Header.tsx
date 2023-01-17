@@ -7,6 +7,7 @@ const StyledView = styled.View`
 
 const StyledText = styled.Text`
 	font-size: 64px;
+	color: white;
 `;
 
 const Header = () => {
