@@ -1,7 +1,7 @@
 export interface Emotion {
 	word: string;
-	partOfSpeech: "adjective" | "noun" | "verb" | null;
-	definition: string | null;
+	partOfSpeech: "adjective" | "noun" | "verb";
+	definition: string;
 	map?: {
 		[key: string]: Emotion;
 	};
