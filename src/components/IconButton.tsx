@@ -6,6 +6,7 @@ const StyledPressable = styled.Pressable`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 8px;
 `;
 
 interface IconButtonProps {

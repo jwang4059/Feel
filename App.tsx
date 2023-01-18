@@ -14,7 +14,9 @@ export default function App() {
 				selections={selections}
 				select={(item) => setSelections([...selections, item])}
 			/>
-			<Footer reset={() => setSelections([])} />
+			{selections.length !== 0 && (
+				<Footer selections={selections} setSelections={setSelections} />
+			)}
 		</Layout>
 	);
 }

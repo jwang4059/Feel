@@ -9,7 +9,7 @@ const StyledView = styled.View`
 	width: 300px;
 	display: flex;
 	align-items: center;
-	margin-bottom: 12px;
+	margin: 12px 0px;
 `;
 
 const Card = styled.View`

@@ -9,13 +9,21 @@ const StyledView = styled.View`
 `;
 
 interface FooterProps {
-	reset: () => void;
+	selections: string[];
+	setSelections: (item: string[]) => void;
 }
 
-const Footer = ({ reset }: FooterProps) => {
+const Footer = ({ selections, setSelections }: FooterProps) => {
 	return (
 		<StyledView>
-			<IconButton onPress={reset}>
+			<IconButton
+				onPress={() =>
+					setSelections(selections.slice(0, selections.length - 1))
+				}
+			>
+				<Icon name={"undo"} size={30} color={"#f5f5f5"} />
+			</IconButton>
+			<IconButton onPress={() => setSelections([])}>
 				<Icon name={"restart"} size={30} color={"#f5f5f5"} />
 			</IconButton>
 		</StyledView>

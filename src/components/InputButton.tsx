@@ -7,11 +7,12 @@ const StyledPressable = styled.Pressable`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 12px 4px;
+	padding: 24px 8px;
 	border-radius: 4px;
 `;
 
 const StyledText = styled.Text`
+	font-size: 20px;
 	text-align: center;
 `;
 
