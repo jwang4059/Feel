@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
+import emotions from "../data/emotions";
 import Form from "./Form";
 import Result from "./Result";
 
@@ -16,9 +17,9 @@ const Main = ({ selections, select }: MainProps) => {
 	return (
 		<StyledView>
 			{selections.length < 3 ? (
-				<Form selections={selections} select={select} />
+				<Form map={emotions} selections={selections} select={select} />
 			) : (
-				<Result selections={selections} />
+				<Result map={emotions} selections={selections} />
 			)}
 		</StyledView>
 	);

@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList } from "react-native";
 import styled from "styled-components/native";
-import emotions, { Emotion, EmotionMap } from "../data/emotions";
+import { Emotion, EmotionMap } from "../data/emotions";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import IconButton from "./IconButton";
 import ListItem from "./ListItem";
@@ -15,11 +15,11 @@ const StyledFlatList = styled.FlatList`
 ` as unknown as typeof FlatList;
 
 interface ResultProps {
+	map: EmotionMap | undefined;
 	selections: string[];
 }
 
-const Result = ({ selections }: ResultProps) => {
-	let map: EmotionMap | undefined = emotions["map"];
+const Result = ({ map, selections }: ResultProps) => {
 	const data: Emotion[] = [];
 
 	for (const selection of selections) {
