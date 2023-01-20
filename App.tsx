@@ -8,8 +8,8 @@ export default function App() {
 	const [selections, setSelections] = useState<string[]>([]);
 
 	return (
-		<Layout>
-			<Header />
+		<Layout selections={selections}>
+			<Header selections={selections} />
 			<Main
 				selections={selections}
 				select={(item) => setSelections([...selections, item])}
