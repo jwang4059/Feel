@@ -45,7 +45,7 @@ const Result = ({ map, selections }: ResultProps) => {
 						<Icon
 							name={"arrow-down-bold-outline"}
 							size={30}
-							color={"#f5f5f5"}
+							color={"#171717"}
 						/>
 					</IconButton>
 				)}
